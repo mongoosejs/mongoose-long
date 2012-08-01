@@ -1,0 +1,30 @@
+{
+  "name": "mongoose-long",
+  "version": "0.0.0",
+  "description": "Long number type for Mongoose",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aheckmann/mongoose-long.git"
+  },
+  "keywords": [
+    "mongoose",
+    "long",
+    "number",
+    "type",
+    "schematype",
+    "schema"
+  ],
+  "author": "Aaron Heckmann <aaron.heckmann+github@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "*",
+    "mongoose": "3.0.0alpha2"
+  }
+}
