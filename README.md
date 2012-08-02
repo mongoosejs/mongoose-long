@@ -24,4 +24,4 @@ part.save()
 
 See [node-mongodb-native](http://mongodb.github.com/node-mongodb-native/api-bson-generated/long.html) docs on all the `Long` methods available.
 
-[LICENSE](https://github.com/aheckmann/mongoose-ttl/blob/master/LICENSE)
+[LICENSE](https://github.com/aheckmann/mongoose-long/blob/master/LICENSE)
