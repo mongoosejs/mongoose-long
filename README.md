@@ -22,6 +22,12 @@ part.long = part.long.divide(Long.fromString("2"));
 part.save()
 ```
 
+### install
+
+```
+npm install mongoose-long
+```
+
 See [node-mongodb-native](http://mongodb.github.com/node-mongodb-native/api-bson-generated/long.html) docs on all the `Long` methods available.
 
 [LICENSE](https://github.com/aheckmann/mongoose-long/blob/master/LICENSE)
