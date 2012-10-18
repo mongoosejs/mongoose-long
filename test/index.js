@@ -41,7 +41,7 @@ describe('Long', function(){
     before(function(done){
       db = mongoose.createConnection('localhost', 'mongoose_long')
       db.once('open', function () {
-        schema = new Schema({ long: Long });
+        schema = new Schema({ long: Long, name: 'string' });
         S = db.model('Long', schema);
         done();
       });
@@ -141,12 +141,13 @@ describe('Long', function(){
     it('works with update', function(done){
       S.create({ long: 99999 }, function (err, s) {
         assert.ifError(err);
-        S.update({ long: s.long }, { name: 'changed' }, { upsert: true }, function (err) {
+        S.update({ long: s.long, _id: s._id }, { name: 'changed' }, { upsert: true }, function (err) {
           assert.ifError(err);
 
           S.findById(s._id, function (err, doc) {
             assert.ifError(err);
-            assert.deepEqual({ long: 99999, name: 'changed' }, doc);
+            assert.equal(99999, doc.long);
+            assert.equal('changed', doc.name);
             done();
           })
         });
