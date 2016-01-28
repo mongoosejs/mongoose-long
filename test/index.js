@@ -84,8 +84,8 @@ describe('Long', function(){
         var m = new M({ long: [] });
         m.save(function (err) {
           assert.ok(err);
-          assert.equal('Long', err.type);
-          assert.equal('CastError', err.name);
+          assert.equal('ValidationError', err.name);
+          assert.equal(err.errors['long'].name, 'CastError');
           done();
         });
       })
