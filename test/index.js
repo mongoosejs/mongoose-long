@@ -47,6 +47,10 @@ describe('Long', function(){
       });
     })
 
+    after(function(done) {
+      db.close(done);
+    });
+
     describe('casts', function(){
       it('numbers', function(){
         var v = 200000000;
