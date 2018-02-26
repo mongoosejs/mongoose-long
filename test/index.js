@@ -39,7 +39,7 @@ describe('Long', function(){
     var db, S, schema, id;
 
     before(function(done){
-      db = mongoose.createConnection('localhost', 'mongoose_long')
+      db = mongoose.createConnection('mongodb://localhost:27017/mlong');
       db.once('open', function () {
         schema = new Schema({ long: Long, name: 'string' });
         S = db.model('Long', schema);
