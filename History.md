@@ -1,3 +1,7 @@
+0.2.1 / 2018-05-17
+==================
+  * fix: support bitsAnySet and bitsAllSet #6 [MichelLiu](https://github.com/MichelLiu)
+
 0.2.0 / 2018-02-26
 ==================
   * feat: added support for mongoose 5.x
