@@ -3,7 +3,7 @@
 
 Provides Number Long support for [Mongoose](http://mongoosejs.com).
 
-[![Build Status](https://secure.travis-ci.org/aheckmann/mongoose-long.png)](http://travis-ci.org/aheckmann/mongoose-long)
+[![Build Status](https://secure.travis-ci.org/aheckmann/mongoose-long.png)](http://travis-ci.org/mongoosejs/mongoose-long)
 
 Example:
 
