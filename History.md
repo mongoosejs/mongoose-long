@@ -1,3 +1,7 @@
+0.3.0 / 2020-04-18
+==================
+  * feat: support new Mongoose global schema type configs: `cast()`, `get()`, `set()` #10
+
 0.2.1 / 2018-05-17
 ==================
   * fix: support bitsAnySet and bitsAllSet #6 [MichelLiu](https://github.com/MichelLiu)
