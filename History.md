@@ -1,3 +1,7 @@
+0.3.1 / 2020-07-18
+==================
+ * fix: correct inheritance so `Long.set()` and `Long.get()` work as expected #10
+
 0.3.0 / 2020-04-18
 ==================
   * feat: support new Mongoose global schema type configs: `cast()`, `get()`, `set()` #10
