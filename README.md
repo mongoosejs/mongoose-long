@@ -8,17 +8,20 @@ Provides Number Long support for [Mongoose](http://mongoosejs.com).
 Example:
 
 ```js
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
 require('mongoose-long')(mongoose);
+const {Types: {Long}} = mongoose;
 
-var SchemaTypes = mongoose.Schema.Types;
-var partSchema = new Schema({ long: SchemaTypes.Long });
+const partSchema = new Schema({
+  long: {
+    type: Long,
+  }
+});
 
-var Part = db.model('Part', partSchema);
-var part = new Part({ long: "9223372036854775806" });
+const Part = db.model('Part', partSchema);
+const part = new Part({long: '9223372036854775806'});
 
-var Long = mongoose.Types.Long;
-part.long = part.long.divide(Long.fromString("2"));
+part.long = part.long.divide(Long.fromString('2'));
 part.save()
 ```
 
