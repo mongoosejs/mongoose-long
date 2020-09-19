@@ -1,3 +1,7 @@
+0.3.2 / 2020-09-19
+==================
+ * docs: use const instead of var in README #12 [adamreisnz](https://github.com/adamreisnz)
+
 0.3.1 / 2020-07-18
 ==================
  * fix: correct inheritance so `Long.set()` and `Long.get()` work as expected #10
