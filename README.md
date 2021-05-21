@@ -34,3 +34,14 @@ npm install mongoose-long
 See [node-mongodb-native](http://mongodb.github.com/node-mongodb-native/api-bson-generated/long.html) docs on all the `Long` methods available.
 
 [LICENSE](https://github.com/aheckmann/mongoose-long/blob/master/LICENSE)
+
+### TypeScript Usage
+
+```typescript
+import mongoose from 'mongoose';
+import mongooseLong from 'mongoose-long';
+
+mongooseLong(mongoose);
+
+const Long = mongoose.Schema.Types.Long;
+```
