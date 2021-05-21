@@ -1,3 +1,7 @@
+0.4.0 / 2021-05-21
+==================
+ * feat: add `index.d.ts` file for TypeScript support #13
+
 0.3.2 / 2020-09-19
 ==================
  * docs: use const instead of var in README #12 [adamreisnz](https://github.com/adamreisnz)
