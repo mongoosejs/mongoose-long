@@ -1,3 +1,7 @@
+0.4.1 / 2021-08-10
+==================
+ * fix(index.d.ts): add return type to default export #14
+
 0.4.0 / 2021-05-21
 ==================
  * feat: add `index.d.ts` file for TypeScript support #13
