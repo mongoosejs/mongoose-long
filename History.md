@@ -1,3 +1,7 @@
+0.5.0 / 2021-10-21
+==================
+ * feat: add support for Mongoose 6
+
 0.4.1 / 2021-08-10
 ==================
  * fix(index.d.ts): add return type to default export #14
