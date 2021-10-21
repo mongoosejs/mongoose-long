@@ -145,7 +145,7 @@ describe('Long', function(){
     it('works with update', function(done){
       S.create({ long: 99999 }, function (err, s) {
         assert.ifError(err);
-        S.update({ long: s.long, _id: s._id }, { name: 'changed' }, { upsert: true }, function (err) {
+        S.updateOne({ long: s.long, _id: s._id }, { name: 'changed' }, { upsert: true }, function (err) {
           assert.ifError(err);
 
           S.findById(s._id, function (err, doc) {

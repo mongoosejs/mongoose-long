@@ -25,9 +25,9 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "*",
-    "mongoose": "5.x"
+    "mongoose": "6.x"
   },
   "peerDependencies": {
-    "mongoose": "4.x || 5.x"
+    "mongoose": "4.x || 5.x || 6.x"
   }
 }
