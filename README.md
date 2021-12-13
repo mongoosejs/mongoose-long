@@ -37,6 +37,8 @@ See [node-mongodb-native](http://mongodb.github.com/node-mongodb-native/api-bson
 
 ### TypeScript Usage
 
+Make sure you enable both `compilerOptions.allowSyntheticDefaultImports` and `compilerOptions.esModuleInterop` in your `tsconfig.json`.
+
 ```typescript
 import mongoose from 'mongoose';
 import mongooseLong from 'mongoose-long';
