@@ -1,3 +1,7 @@
+0.5.1 / 2022-01-05
+==================
+ * fix: add `fromString()` and `fromNumber()` for Long type #17 [mkadirtan](https://github.com/mkadirtan)
+
 0.5.0 / 2021-10-21
 ==================
  * feat: add support for Mongoose 6
