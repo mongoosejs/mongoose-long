@@ -12,7 +12,7 @@ declare module 'mongoose' {
   }
   
   namespace Types {
-    class Long extends SchemaType {
+    class Long {
       static fromString: (long: string) => Long;
       static fromNumber: (long: number) => Long;
     }
