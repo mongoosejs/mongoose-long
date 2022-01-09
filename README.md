@@ -31,7 +31,7 @@ part.save()
 npm install mongoose-long
 ```
 
-See [node-mongodb-native](http://mongodb.github.com/node-mongodb-native/api-bson-generated/long.html) docs on all the `Long` methods available.
+See [node-mongodb-native](https://mongodb.github.io/node-mongodb-native/4.2/classes/Long.html) docs on all the `Long` methods available.
 
 [LICENSE](https://github.com/aheckmann/mongoose-long/blob/master/LICENSE)
 
