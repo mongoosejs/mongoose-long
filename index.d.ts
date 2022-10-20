@@ -1,3 +1,4 @@
+import mongodb from "mongodb";
 import { Mongoose } from "mongoose";
 import { SchemaType } from "mongoose";
 import mongooseLong from ".";
@@ -12,9 +13,7 @@ declare module 'mongoose' {
   }
   
   namespace Types {
-    class Long {
-      static fromString: (long: string) => Long;
-      static fromNumber: (long: number) => Long;
+    class Long extends mongodb.Long {
     }
   }
 }
