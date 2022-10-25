@@ -1,3 +1,7 @@
+0.6.0 / 2022-10-24
+==================
+ * feat: change base type of Long to mongodb.Long #19 [d3m3vilurr](https://github.com/d3m3vilurr)
+
 0.5.1 / 2022-01-05
 ==================
  * fix: add `fromString()` and `fromNumber()` for Long type #17 [mkadirtan](https://github.com/mkadirtan)
