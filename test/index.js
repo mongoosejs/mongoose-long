@@ -48,7 +48,7 @@ describe('Long', function(){
     })
 
     after(function(done) {
-      db.close(done);
+      db.close().then(() => { done(); });
     });
 
     describe('casts', function(){
@@ -86,7 +86,9 @@ describe('Long', function(){
         var schema = new Schema({ long: Long }, { strict: 'throw' });
         var M = db.model('throws', schema);
         var m = new M({ long: [] });
-        m.save(function (err) {
+        m.save().then(function () {
+          done("Promise should be rejected.");
+        }).catch(function (err) {
           assert.ok(err);
           assert.equal('ValidationError', err.name);
           assert.equal(err.errors['long'].name, 'CastError');
@@ -98,33 +100,38 @@ describe('Long', function(){
     it('can be saved', function(done){
       var s = new S({ long: 20 });
       id = s.id;
-      s.save(function (err) {
-        assert.ifError(err);
+      s.save().then(function () {
         done();
+      }).catch(function (err) {
+        done(err);
       })
     })
 
     it('is queryable', function(done){
-      S.findById(id, function (err, doc) {
-        assert.ifError(err);
+      S.findById(id).then(function (doc) {
         assert.ok(doc.long instanceof mongoose.Types.Long);
         assert.equal(20, doc.long.toNumber());
         done();
+      }).catch(function(err) {
+        done(err);
       });
     })
 
     it('can be updated', function(done){
-      S.findById(id, function (err, doc) {
-        assert.ifError(err);
+      S.findById(id).then(function (doc) {
         doc.long = doc.long.add(mongoose.Types.Long.fromString("10"));
-        doc.save(function (err) {
-          assert.ifError(err);
-          S.findById(id, function (err, doc) {
-            assert.ifError(err);
+        doc.save().then(function () {
+          S.findById(id).then(function (doc) {
             assert.equal(30, doc.long.toNumber());
             done();
+          }).catch(function (err) {
+            done(err);
           });
+        }).catch(function (err) {
+          done(err);
         })
+      }).catch(function (err) {
+        done(err);
       })
     })
 
@@ -132,30 +139,35 @@ describe('Long', function(){
       var s = new Schema({ long: { type: Long, required: true }});
       var M = db.model('required', s);
       var m = new M;
-      m.save(function (err) {
+      m.save().then(function () {
+        done("Field should be required.");
+      }).catch(function(err) {
         assert.ok(err);
         m.long = 10;
-        m.validate(function (err) {
-          assert.ifError(err);
+        m.validate().then(function () {
           done();
-        })
+        }).catch(function(err) {
+          done(err);
+        });
       })
     })
 
     it('works with update', function(done){
-      S.create({ long: 99999 }, function (err, s) {
-        assert.ifError(err);
-        S.updateOne({ long: s.long, _id: s._id }, { name: 'changed' }, { upsert: true }, function (err) {
-          assert.ifError(err);
-
-          S.findById(s._id, function (err, doc) {
-            assert.ifError(err);
+      S.create({ long: 99999 }).then(function (s) {
+        S.updateOne({ long: s.long, _id: s._id }, { name: 'changed' }, { upsert: true }).then(function () {
+          S.findById(s._id).then(function (doc) {
             assert.equal(99999, doc.long);
             assert.equal('changed', doc.name);
             done();
-          })
-        });
-      });
+          }).catch(function (err) {
+            done(err);
+          });
+        }).catch(function (err) {
+          done(err);
+        })
+      }).catch(function (err) {
+        done(err);
+      })
 
     })
   })
