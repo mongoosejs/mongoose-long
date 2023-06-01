@@ -1,3 +1,7 @@
+0.7.0 / 2023-06-01
+==================
+ * feat: support Mongoose 7 [yincrash](https://github.com/yincrash)
+
 0.6.0 / 2022-10-24
 ==================
  * feat: change base type of Long to mongodb.Long #19 [d3m3vilurr](https://github.com/d3m3vilurr)
