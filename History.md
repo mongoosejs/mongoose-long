@@ -1,3 +1,7 @@
+0.7.1 / 2023-08-22
+==================
+ * fix: allow undefined #22 [WhatCats](https://github.com/WhatCats)
+
 0.7.0 / 2023-06-01
 ==================
  * feat: support Mongoose 7 [yincrash](https://github.com/yincrash)
